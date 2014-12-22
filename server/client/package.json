@@ -33,8 +33,10 @@
     "vinyl-source-stream": "1.0.0"
   },
   "dependencies": {
-    "backbone": "1.1.2",
-    "underscore": "1.7.0",
+    "lodash": "2.4.1",
+    "c3": "0.3.0",
+    "d3": "3.4.13",
+    "moment": "2.8.3",
     "govuk_frontend_toolkit": "3.0.1"
   }
 }
