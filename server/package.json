@@ -1,0 +1,26 @@
+{
+  "name": "pp-server-side-rendering",
+  "version": "0.0.1",
+  "description": "",
+  "private": true,
+  "scripts": {
+    "test": "gulp test"
+  },
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jcbashdown/pp-frontend-testing.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jcbashdown/pp-frontend-testing/issues"
+  },
+  "homepage": "https://github.com/jcbashdown/pp-frontend-testing",
+  "devDependencies": {
+  },
+  "dependencies": {
+    "underscore": "1.7.0",
+    "performanceplatform-client.js": "git+https://github.com/alphagov/performanceplatform-client.js.git#release_98",
+    "mustache": "0.8.2"
+  }
+}
