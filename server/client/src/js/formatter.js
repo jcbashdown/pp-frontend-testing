@@ -1,4 +1,4 @@
-module.exports = function(moment) {
+module.exports = function(moment, _) {
   var formatters = {
 
     time: function (value, options) {
@@ -342,4 +342,4 @@ module.exports = function(moment) {
     return format(value, options);
   };
 
-});
+};

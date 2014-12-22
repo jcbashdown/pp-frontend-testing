@@ -2,7 +2,7 @@ var _ = require('lodash');
 var d3 = require('d3');
 var c3 = require('c3');
 var moment = require('moment');
-var format = require('./formatter')(moment);
+var format = require('./formatter')(moment, _);
 
 var dashboardSlug = window.location.pathname.split('/').pop();
 
