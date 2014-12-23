@@ -1,12 +1,12 @@
 var data_format_functions = require('../../lib/data_formatter.js');
-var format_data = data_format_functions.format_data;
 var fs = require('fs');
-var dashboard_response = fs.readFileSync(__dirname + '/../fixtures/dashboard_response.json', 'utf8');
+var dashboard_response = JSON.parse(fs.readFileSync(__dirname + '/../fixtures/dashboard_response.json', 'utf8'));
 var formatted_data = fs.readFileSync(__dirname + '/../fixtures/formatted_data.json', 'utf8');
 
 describe('format_data', function () {
   it('return the stripped down data', function () {
-    expect(format_data(dashboard_response)).to.deep.equal(formatted_data);
+    console.log(JSON.stringify(data_format_functions.format_data(dashboard_response),null,2));
+    expect(data_format_functions.format_data(dashboard_response)).to.deep.equal(formatted_data);
   });
 });
 
