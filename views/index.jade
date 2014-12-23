@@ -3,12 +3,15 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
-  table
-    tr
-      each value, key in data[0]
-        th= key
-    each datum in data
-      tr
-        each value, key in data[0]
-          td= value 
+  each module in modules 
+    section(class='module')
+      h2= module.title
+      table
+        tr
+          each value, key in module.data[0]
+            th= key
+        each datum in module.data
+          tr
+            each value, key in datum
+              td= value 
         

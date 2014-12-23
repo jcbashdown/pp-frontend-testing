@@ -338,7 +338,7 @@ module.exports = function(moment, _) {
     format: format,
     numberListFormatter: numberListFormatter
   };*/
-  window.format = function(options, value) {
+  return function(options, value) {
     return format(value, options);
   };
 

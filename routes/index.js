@@ -8,7 +8,8 @@ router.get('/:slug', function(req, res) {
   var dashboard = new Dashboard(req.params['slug']);
   dashboard.getDashboardMetrics().
     then(function(config){
-      res.render('index', { title: config['title'], data: config['modules'][0]['data']});
+      console.log(config);
+      res.render('index', { title: config['title'], modules: config['modules']});
     }); 
 });
 
