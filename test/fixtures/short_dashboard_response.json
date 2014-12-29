@@ -1,0 +1,152 @@
+{
+  "business-model": "Taxpayers",
+  "customer-type": "Individuals",
+  "description": "Arrange meetings between prisoners and social visitors.",
+  "title": "Prison visit bookings",
+  "tagline": "",
+  "agency": {
+    "abbr": "NOMS",
+    "title": "National Offender Management Service"
+  },
+  "modules": [
+    {
+      "info": [
+        "Data source: Ministry of Justice"
+      ],
+      "value-attribute": "number_of_transactions",
+      "description": "",
+      "module-type": "kpi",
+      "title": "Transactions per year",
+      "format": {
+        "sigfigs": 3,
+        "magnitude": true,
+        "type": "number"
+      },
+      "classes": "cols3",
+      "slug": "transactions-per-year",
+      "data-source": {
+        "data-group": "transactional-services",
+        "data-type": "summaries",
+        "query-params": {
+          "sort_by": "_timestamp:descending",
+          "filter_by": [
+            "service_id:moj-prison-visit-booking",
+            "type:seasonally-adjusted"
+          ],
+          "flatten": true,
+          "limit": 2
+        }
+      },
+      "data": [
+        {
+          "_day_start_at": "2013-07-01T00:00:00+00:00",
+          "_hour_start_at": "2013-07-01T00:00:00+00:00",
+          "_id": "MjAxMy0wNy0wMSAwMDowMDowMDIwMTQtMDctMDEgMDA6MDA6MDBtb2otcHJpc29uLXZpc2l0LWJvb2tpbmc=",
+          "_month_start_at": "2013-07-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-07-01T00:00:00+00:00",
+          "_timestamp": "2013-07-01T00:00:00+00:00",
+          "_updated_at": "2014-12-10T10:05:29.701000+00:00",
+          "_week_start_at": "2013-07-01T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 3.8,
+          "digital_cost_per_transaction": 3.2,
+          "digital_takeup": 0.015616402960801301,
+          "end_at": "2014-07-01T00:00:00+00:00",
+          "number_of_digital_transactions": 20549,
+          "number_of_transactions": 1315860,
+          "period": "year",
+          "service_id": "moj-prison-visit-booking",
+          "total_cost": 5000268,
+          "type": "seasonally-adjusted",
+          "formatted_change_from_previous": {
+            "change": "−0.32%",
+            "trend": "decrease"
+          },
+          "formatted_value": "1.32m",
+          "formatted_date_range": "1 July 2013 to 30 June 2014",
+          "formatted_start_at": "1 July 2013",
+          "formatted_end_at": "30 June 2014"
+        },
+        {
+          "_day_start_at": "2013-04-01T00:00:00+00:00",
+          "_hour_start_at": "2013-04-01T00:00:00+00:00",
+          "_id": "MjAxMy0wNC0wMSAwMDowMDowMDIwMTQtMDQtMDEgMDA6MDA6MDBtb2otcHJpc29uLXZpc2l0LWJvb2tpbmc=",
+          "_month_start_at": "2013-04-01T00:00:00+00:00",
+          "_quarter_start_at": "2013-04-01T00:00:00+00:00",
+          "_timestamp": "2013-04-01T00:00:00+00:00",
+          "_updated_at": "2014-12-10T10:05:29.702000+00:00",
+          "_week_start_at": "2013-04-01T00:00:00+00:00",
+          "_year_start_at": "2013-01-01T00:00:00+00:00",
+          "cost_per_transaction": 3.8,
+          "digital_cost_per_transaction": null,
+          "digital_takeup": 0.0020876874165322726,
+          "end_at": "2014-04-01T00:00:00+00:00",
+          "number_of_digital_transactions": 2756,
+          "number_of_transactions": 1320121,
+          "period": "year",
+          "service_id": "moj-prison-visit-booking",
+          "total_cost": 5016459.8,
+          "type": "seasonally-adjusted",
+          "formatted_value": "1.32m",
+          "formatted_date_range": "1 April 2013 to 31 March 2014",
+          "formatted_start_at": "1 April 2013",
+          "formatted_end_at": "31 March 2014"
+        }
+      ],
+      "axes": {
+        "x": {
+          "label": "Quarter",
+          "key": [
+            "_quarter_start_at",
+            "end_at"
+          ],
+          "format": "date"
+        },
+        "y": [
+          {
+            "label": "Transactions per year",
+            "key": "number_of_transactions",
+            "format": {
+              "sigfigs": 3,
+              "magnitude": true,
+              "type": "number"
+            }
+          }
+        ]
+      },
+      "tabularData": [
+        [
+          "Quarter",
+          "1 July 2013 to 30 June 2014",
+          "1 April 2013 to 31 March 2014"
+        ],
+        [
+          "Transactions per year",
+          "1.32m",
+          "1.32m"
+        ]
+      ]
+    }
+  ],
+  "slug": "prison-visits",
+  "description-extra": "The service must match the visitor and prisoner to the available capacity for visits, balancing convenience for the visitor with the need for efficiency and security.",
+  "costs": "Cost-per-transaction data is based on estimates of the cost of back office support for prison visit booking and the cost of time spent by staff on prison wings supporting applications by prisoners to book visits.",
+  "strapline": "Dashboard",
+  "published": true,
+  "department": {
+    "abbr": "MOJ",
+    "title": "Ministry of Justice"
+  },
+  "page-type": "dashboard",
+  "other-notes": "",
+  "relatedPages": {
+    "improve-dashboard-message": false,
+    "transaction": {
+      "url": "https://www.gov.uk/prison-visits",
+      "type": "transaction",
+      "title": "Visit someone in prison"
+    },
+    "other": []
+  },
+  "dashboard-type": "transaction"
+}
