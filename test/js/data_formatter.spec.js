@@ -6,54 +6,27 @@ var formatted_data = JSON.parse(fs.readFileSync(__dirname + '/../fixtures/format
 var short_dashboard_response = JSON.parse(fs.readFileSync(__dirname + '/../fixtures/short_dashboard_response.json', 'utf8'));
 var short_formatted_data = JSON.parse(fs.readFileSync(__dirname + '/../fixtures/short_formatted_data.json', 'utf8'));
 
-describe('format_data', function () {
+//describe('format_data', function () {
+//  it('return the stripped down data', function () {
+//    formatted = data_format_functions.format_data(dashboard_response);
+//    expect(formatted).to.deep.equal(formatted_data);
+//  });
+//});
+
+describe('short format_data', function () {
   it('return the stripped down data', function () {
-    /*formatted = data_format_functions.format_data(dashboard_response);*/
-    /*console.log(JsDiff.diffJson(JSON.stringify(formatted), JSON.stringify(formatted_data)));*/
-    /*console.log(JSON.stringify(formatted, null, 2));*/
-    /*expect(formatted).to.deep.equal(formatted_data);*/
+    formatted = data_format_functions.old_format_data(short_dashboard_response);
+    expect(formatted).to.deep.equal(short_formatted_data);
   });
 });
 
 describe('short format_data', function () {
   it('return the stripped down data', function () {
     formatted = data_format_functions.format_data(short_dashboard_response);
-    /*console.log(JsDiff.diffJson(JSON.stringify(formatted), JSON.stringify(formatted_data)));*/
-    console.log(JSON.stringify(formatted, null, 2));
     expect(formatted).to.deep.equal(short_formatted_data);
   });
 });
 
-describe('data_formatter.get_axis_keys', function () {
-  var axes;
-  beforeEach(function(){
-    axes = {
-      "y": [
-        {
-          "label": "Completion percentage",
-          "format": {
-            "type": "percent"
-          },
-          "key": "rate"
-        }
-      ],
-      "x": {
-        "format": "date",
-        "key": [
-          "_start_at",
-          "_end_at"
-        ],
-        "label": "Date"
-      }
-    }
-  });
-  it('return strings to match the required keys', function () {
-    /*var keys = data_format_functions._get_axis_keys(axes);*/
-    /*expect(keys['x']).to.include('_start_at');*/
-    /*expect(keys['x']).to.include('_end_at');*/
-    /*expect(keys['y']).to.include('rate');*/
-  });
-});
 describe('data_formatter.get_key_regexes', function () {
   var axes;
   beforeEach(function(){
@@ -105,9 +78,50 @@ describe('data_formatter.get_axis_keys', function () {
     }
   });
   it('return strings to match the required keys', function () {
-    /*var keys = data_format_functions._get_axis_keys(axes);*/
-    /*expect(keys['x']).to.include('_timestamp');*/
-    /*expect(keys['y']).to.include('unique_visitors');*/
+    var keys = data_format_functions._get_axis_keys(axes);
+    console.log('unique_visitors');
+    console.log(JSON.stringify(keys, null, 2));
+    console.log('^unique_visitors');
+    expect(keys['x'][0]['value']).to.include('_timestamp');
+    expect(keys['x'][0]['formatted_value']).to.include('formatted_timestamp');
+    expect(keys['y'][0]['value']).to.include('unique_visitors');
+    expect(keys['y'][0]['formatted_value']).to.include('formatted_unique_visitors');
+  });
+});
+describe('data_formatter.get_axis_keys', function () {
+  var axes;
+  beforeEach(function(){
+    axes = {
+      "y": [
+        {
+          "label": "Completion percentage",
+          "format": {
+            "type": "percent"
+          },
+          "key": "rate"
+        }
+      ],
+      "x": {
+        "format": "date",
+        "key": [
+          "_start_at",
+          "_end_at"
+        ],
+        "label": "Date"
+      }
+    }
+  });
+  it('return strings to match the required keys', function () {
+    var keys = data_format_functions._get_axis_keys(axes);
+    console.log('completion');
+    console.log(JSON.stringify(keys, null, 2));
+    console.log('^completion');
+    expect(keys['x'][0]['value']).to.include('_start_at');
+    expect(keys['x'][0]['value']).to.include('_end_at');
+    expect(keys['x'][0]['formatted_value']).to.include('formatted_start_at');
+    expect(keys['x'][0]['formatted_value']).to.include('formatted_end_at');
+    expect(keys['y'][0]['value']).to.include('rate');
+    expect(keys['y'][0]['formatted_value']).to.include('formatted_rate');
   });
 });
 describe('data_formatter.get_axis_keys', function () {
@@ -155,6 +169,9 @@ describe('data_formatter.get_axis_keys', function () {
   });
   it('return strings to match the required keys', function () {
     var keys = data_format_functions._get_axis_keys(axes);
+    console.log('other');
+    console.log(JSON.stringify(keys, null, 2));
+    console.log('^other');
     expect(keys['x'][0]['value'][0]).to.equal('_start_at');
     expect(keys['x'][0]['formatted_value'][0]).to.equal('formatted_start_at');
     expect(keys['x'].length).to.equal(1);
@@ -166,5 +183,59 @@ describe('data_formatter.get_axis_keys', function () {
     expect(keys['y'][3]['value']).to.include('rating_3');
     expect(keys['y'][4]['value']).to.include('rating_4');
     expect(keys['y'][5]['value']).to.include('rating_5');
+  });
+});
+describe('data_formatter.simple_get_axis_keys', function () {
+  var axes;
+  beforeEach(function(){
+    axes = {
+      "y": [
+        {
+          "format": "percent",
+          "key": "score",
+          "label": "User satisfaction"
+        },
+        {
+          "format": "integer",
+          "key": "rating_1",
+          "label": "Very dissatisfied"
+        },
+        {
+          "format": "integer",
+          "key": "rating_2",
+          "label": "Dissatisfied"
+        },
+        {
+          "format": "integer",
+          "key": "rating_3",
+          "label": "Neither satisfied or dissatisfied"
+        },
+        {
+          "format": "integer",
+          "key": "rating_4",
+          "label": "Satisfied"
+        },
+        {
+          "format": "integer",
+          "key": "rating_5",
+          "label": "Very satisfied"
+        }
+      ],
+      "x": {
+        "format": "date",
+        "key": "_start_at",
+        "label": "Date"
+      }
+    }
+  });
+  it('return strings to match the required keys', function () {
+    var keys = data_format_functions._simple_get_axis_keys(axes);
+    console.log('other');
+    console.log(JSON.stringify(keys, null, 2));
+    console.log('^other');
+    expect(keys['x']['value']).to.equal('_start_at');
+    expect(keys['x']['formatted_value']).to.equal('formatted_start_at');
+    expect(keys['y']['value']).to.equal('score');
+    expect(keys['y']['formatted_value']).to.equal('formatted_score');
   });
 });
