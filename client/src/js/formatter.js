@@ -1,4 +1,4 @@
-module.exports = function(moment, _) {
+module.exports = function (moment, _) {
   var formatters = {
 
     time: function (value, options) {
@@ -124,7 +124,13 @@ module.exports = function(moment, _) {
           value = value / magnitude.value;
         }
         if (typeof options.sigfigs === 'number' && typeof options.dps === 'undefined') {
-          options.dps = Math.min(Math.max(Math.ceil(options.sigfigs - 1 - utils.log10(value)), 0), options.sigfigs - 1);
+          options.dps = Math.min(
+            Math.max(
+              Math.ceil(
+                options.sigfigs - 1 - utils.log10(value)
+              ), 0
+            ), options.sigfigs - 1
+          );
         }
         if (typeof options.dps === 'number') {
           value = utils.roundToDps(value, options.dps);
@@ -261,7 +267,11 @@ module.exports = function(moment, _) {
     if (typeof formatters[formatter.type] === 'function' && value !== null && value !== undefined) {
       var val = formatters[formatter.type](value, _.clone(formatter));
       if (formatter.abbr && formatter.magnitude) {
-        var unmagnituded = formatters[formatter.type](value, _.extend({}, formatter, { magnitude: false, pad: false }));
+        var unmagnituded = formatters[formatter.type](
+          value, _.extend(
+            {}, formatter, { magnitude: false, pad: false }
+          )
+        );
         if (val !== unmagnituded) {
           return '<abbr title="' + unmagnituded + '">' + val + '</abbr>';
         }
@@ -286,9 +296,13 @@ module.exports = function(moment, _) {
     if (magnitude.value === 1) {
       magnitude = true;
     }
-    if (_.all(values, function (v) { return v % magnitude.value === 0; })) {
+    if (_.all(values, function (v) {
+      return v % magnitude.value === 0; i
+    })) {
       props.dps = 0;
-    } else if (_.all(values, function (v) { return v % (magnitude.value / 10) === 0; })) {
+    } else if (_.all(values, function (v) {
+      return v % (magnitude.value / 10) === 0;
+    })) {
       props.dps = 1;
     }
     props.magnitude = magnitude;
@@ -298,7 +312,7 @@ module.exports = function(moment, _) {
 
   };
 
-  var dateRangeFormatter = function(value, options) {
+  var dateRangeFormatter = function (value, options) {
     _.defaults(options, {
       format: 'D MMM YYYY',
       subtract: 'day'
@@ -338,7 +352,7 @@ module.exports = function(moment, _) {
     format: format,
     numberListFormatter: numberListFormatter
   };*/
-  return function(options, value) {
+  return function (options, value) {
     return format(value, options);
   };
 

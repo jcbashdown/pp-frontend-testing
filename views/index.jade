@@ -8,10 +8,10 @@ block content
       h2= module.title
       table
         tr
-          each value, key in module.data[0]
-            th= key
-        each datum in module.data
+          th(data-raw=module.table[0].x.name)= module.table[0].x.formatted_name 
+          th(data-raw=module.table[0].y.name)= module.table[0].y.formatted_name 
+        each datum in module.table
           tr
-            each value, key in datum
-              td(data-raw=value)= value 
+            td(data-raw=datum.x.value)= datum.x.formatted_value
+            td(data-raw=datum.y.value)= datum.y.formatted_value
         
