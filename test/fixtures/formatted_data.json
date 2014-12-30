@@ -9,697 +9,817 @@
     "title": "National Offender Management Service"
   },
   "modules": [
-      {
-        "info": [
-          "Data source: Ministry of Justice"
-        ],
-        "value-attribute": "number_of_transactions",
-        "description": "",
-        "module-type": "kpi",
-        "title": "Transactions per year",
-        "format": {
-          "sigfigs": 3,
-          "magnitude": true,
-          "type": "number"
-        },
-        "classes": "cols3",
-        "slug": "transactions-per-year",
-        "data-source": {
-          "data-group": "transactional-services",
-          "data-type": "summaries",
-          "query-params": {
-            "sort_by": "_timestamp:descending",
-            "filter_by": [
-              "service_id:moj-prison-visit-booking",
-              "type:seasonally-adjusted"
-            ],
-            "flatten": true,
-            "limit": 2
-          }
-        },
-        "data": [
-          {
-            "_quarter_start_at": "2013-07-01T00:00:00+00:00",
-            "end_at": "2014-07-01T00:00:00+00:00",
-            "number_of_transactions": 1315860,
-            "formatted_change_from_previous": {
-              "change": "−0.32%",
-              "trend": "decrease"
-            },
-            "formatted_value": "1.32m",
-            "formatted_date_range": "1 July 2013 to 30 June 2014",
-            "formatted_start_at": "1 July 2013",
-            "formatted_end_at": "30 June 2014"
-          },
-          {
-            "_quarter_start_at": "2013-04-01T00:00:00+00:00",
-            "end_at": "2014-04-01T00:00:00+00:00",
-            "number_of_transactions": 1320121,
-            "formatted_value": "1.32m",
-            "formatted_date_range": "1 April 2013 to 31 March 2014",
-            "formatted_start_at": "1 April 2013",
-            "formatted_end_at": "31 March 2014"
-          }
-        ],
-        "table": [
-          {
-            "x": {
-              "value": "2013-07-01T00:00:00+00:00",
-              "formatted_value": "1 July 2013",
-              "name": "_quarter_start_at",
-              "formatted_name": "Quarter start at"
-            },
-            "y": {
-              "value": 1315860,
-              "formatted_value": "1.32m",
-              "name": "_number_of_transactions",
-              "formatted_name": "Number of transactions"
-            }
-          },
-          {
-            "x": {
-              "value": "2013-04-01T00:00:00+00:00",
-              "formatted_value": "1 April 2013",
-              "name": "_quarter_start_at",
-              "formatted_name": "Quarter start at"
-            },
-            "y": {
-              "value": 1320121,
-              "formatted_value": "1.32m",
-              "name": "_number_of_transactions",
-              "formatted_name": "Number of transactions"
-            }
-          }
-        ],
-        "axes": {
-          "x": {
-            "label": "Quarter",
-            "key": [
-              "_quarter_start_at",
-              "end_at"
-            ],
-            "format": "date"
-          },
-          "y": [
-            {
-              "label": "Transactions per year",
-              "key": "number_of_transactions",
-              "format": {
-                "sigfigs": 3,
-                "magnitude": true,
-                "type": "number"
-              }
-            }
-          ]
-        },
-        "tabularData": [
-          [
-            "Quarter",
-            "1 July 2013 to 30 June 2014",
-            "1 April 2013 to 31 March 2014"
+    {
+      "info": [
+        "Data source: Ministry of Justice"
+      ],
+      "value-attribute": "number_of_transactions",
+      "description": "",
+      "module-type": "kpi",
+      "title": "Transactions per year",
+      "format": {
+        "sigfigs": 3,
+        "magnitude": true,
+        "type": "number"
+      },
+      "classes": "cols3",
+      "slug": "transactions-per-year",
+      "data-source": {
+        "data-group": "transactional-services",
+        "data-type": "summaries",
+        "query-params": {
+          "sort_by": "_timestamp:descending",
+          "filter_by": [
+            "service_id:moj-prison-visit-booking",
+            "type:seasonally-adjusted"
           ],
-          [
-            "Transactions per year",
-            "1.32m",
-            "1.32m"
-          ]
+          "flatten": true,
+          "limit": 2
+        }
+      },
+      "data": [
+        {
+          "formatted_change_from_previous": {
+            "change": "−0.32%",
+            "trend": "decrease"
+          },
+          "formatted_value": "1.32m",
+          "formatted_date_range": "1 July 2013 to 30 June 2014",
+          "formatted_start_at": "1 July 2013",
+          "formatted_end_at": "30 June 2014",
+          "_quarter_start_at": "2013-07-01T00:00:00+00:00",
+          "end_at": "2014-07-01T00:00:00+00:00",
+          "number_of_transactions": 1315860
+        },
+        {
+          "formatted_value": "1.32m",
+          "formatted_date_range": "1 April 2013 to 31 March 2014",
+          "formatted_start_at": "1 April 2013",
+          "formatted_end_at": "31 March 2014",
+          "_quarter_start_at": "2013-04-01T00:00:00+00:00",
+          "end_at": "2014-04-01T00:00:00+00:00",
+          "number_of_transactions": 1320121
+        }
+      ],
+      "axes": {
+        "x": {
+          "label": "Quarter",
+          "key": [
+            "_quarter_start_at",
+            "end_at"
+          ],
+          "format": "date"
+        },
+        "y": [
+          {
+            "label": "Transactions per year",
+            "key": "number_of_transactions",
+            "format": {
+              "sigfigs": 3,
+              "magnitude": true,
+              "type": "number"
+            }
+          }
         ]
       },
-      {
-        "info": [
-          "Cost-per-transaction data is based on estimates of the cost of back office support for prison visit booking and the cost of time spent by staff on prison wings supporting applications by prisoners to book visits.",
-          "<br />",
-          "Data source: Ministry of Justice",
-          "Total cost is the overall cost per year of providing a service, including staff, IT and accommodation costs; the total cost is automatically calculated from volume and cost per transaction figures, and some rounding errors may occur."
+      "tabularData": [
+        [
+          "Quarter",
+          "1 July 2013 to 30 June 2014",
+          "1 April 2013 to 31 March 2014"
         ],
-        "value-attribute": "total_cost",
-        "description": "",
-        "module-type": "kpi",
-        "title": "Total cost",
-        "format": {
-          "sigfigs": 3,
-          "magnitude": true,
-          "type": "currency"
-        },
-        "classes": "cols3",
-        "slug": "total-cost",
-        "data-source": {
-          "data-group": "transactional-services",
-          "data-type": "summaries",
-          "query-params": {
-            "sort_by": "_timestamp:descending",
-            "filter_by": [
-              "service_id:moj-prison-visit-booking",
-              "type:seasonally-adjusted"
-            ],
-            "flatten": true,
-            "limit": 2
+        [
+          "Transactions per year",
+          "1.32m",
+          "1.32m"
+        ]
+      ],
+      "table": [
+        {
+          "x": {
+            "value": "2013-07-01T00:00:00+00:00",
+            "formatted_value": "1 July 2013",
+            "name": "_quarter_start_at",
+            "formatted_name": "Quarter start at"
+          },
+          "y": {
+            "value": 1315860,
+            "formatted_value": "1.32m",
+            "name": "number_of_transactions",
+            "formatted_name": "Number of transactions"
           }
         },
-        "data": [
+        {
+          "x": {
+            "value": "2013-04-01T00:00:00+00:00",
+            "formatted_value": "1 April 2013",
+            "name": "_quarter_start_at",
+            "formatted_name": "Quarter start at"
+          },
+          "y": {
+            "value": 1320121,
+            "formatted_value": "1.32m",
+            "name": "number_of_transactions",
+            "formatted_name": "Number of transactions"
+          }
+        }
+      ]
+    },
+    {
+      "info": [
+        "Cost-per-transaction data is based on estimates of the cost of back office support for prison visit booking and the cost of time spent by staff on prison wings supporting applications by prisoners to book visits.",
+        "<br />",
+        "Data source: Ministry of Justice",
+        "Total cost is the overall cost per year of providing a service, including staff, IT and accommodation costs; the total cost is automatically calculated from volume and cost per transaction figures, and some rounding errors may occur."
+      ],
+      "value-attribute": "total_cost",
+      "description": "",
+      "module-type": "kpi",
+      "title": "Total cost",
+      "format": {
+        "sigfigs": 3,
+        "magnitude": true,
+        "type": "currency"
+      },
+      "classes": "cols3",
+      "slug": "total-cost",
+      "data-source": {
+        "data-group": "transactional-services",
+        "data-type": "summaries",
+        "query-params": {
+          "sort_by": "_timestamp:descending",
+          "filter_by": [
+            "service_id:moj-prison-visit-booking",
+            "type:seasonally-adjusted"
+          ],
+          "flatten": true,
+          "limit": 2
+        }
+      },
+      "data": [
+        {
+          "formatted_change_from_previous": {
+            "change": "−0.32%",
+            "trend": "decrease"
+          },
+          "formatted_value": "£5m",
+          "formatted_date_range": "1 July 2013 to 30 June 2014",
+          "formatted_start_at": "1 July 2013",
+          "formatted_end_at": "30 June 2014",
+          "_quarter_start_at": "2013-07-01T00:00:00+00:00",
+          "end_at": "2014-07-01T00:00:00+00:00",
+          "total_cost": 5000268
+        },
+        {
+          "formatted_value": "£5.02m",
+          "formatted_date_range": "1 April 2013 to 31 March 2014",
+          "formatted_start_at": "1 April 2013",
+          "formatted_end_at": "31 March 2014",
+          "_quarter_start_at": "2013-04-01T00:00:00+00:00",
+          "end_at": "2014-04-01T00:00:00+00:00",
+          "total_cost": 5016459.8
+        }
+      ],
+      "axes": {
+        "x": {
+          "label": "Quarter",
+          "key": [
+            "_quarter_start_at",
+            "end_at"
+          ],
+          "format": "date"
+        },
+        "y": [
           {
-            "_quarter_start_at": "2013-07-01T00:00:00+00:00",
-            "end_at": "2014-07-01T00:00:00+00:00",
-            "total_cost": 5000268,
-            "formatted_change_from_previous": {
-              "change": "−0.32%",
-              "trend": "decrease"
-            },
+            "label": "Total cost",
+            "key": "total_cost",
+            "format": {
+              "sigfigs": 3,
+              "magnitude": true,
+              "type": "currency"
+            }
+          }
+        ]
+      },
+      "tabularData": [
+        [
+          "Quarter",
+          "1 July 2013 to 30 June 2014",
+          "1 April 2013 to 31 March 2014"
+        ],
+        [
+          "Total cost",
+          "£5m",
+          "£5.02m"
+        ]
+      ],
+      "table": [
+        {
+          "x": {
+            "value": "2013-07-01T00:00:00+00:00",
+            "formatted_value": "1 July 2013",
+            "name": "_quarter_start_at",
+            "formatted_name": "Quarter start at"
+          },
+          "y": {
+            "value": 5000268,
             "formatted_value": "£5m",
-            "formatted_date_range": "1 July 2013 to 30 June 2014",
-            "formatted_start_at": "1 July 2013",
-            "formatted_end_at": "30 June 2014"
+            "name": "total_cost",
+            "formatted_name": "Total cost"
+          }
+        },
+        {
+          "x": {
+            "value": "2013-04-01T00:00:00+00:00",
+            "formatted_value": "1 April 2013",
+            "name": "_quarter_start_at",
+            "formatted_name": "Quarter start at"
           },
-          {
-            "_quarter_start_at": "2013-04-01T00:00:00+00:00",
-            "end_at": "2014-04-01T00:00:00+00:00",
-            "total_cost": 5016459.8,
+          "y": {
+            "value": 5016459.8,
             "formatted_value": "£5.02m",
-            "formatted_date_range": "1 April 2013 to 31 March 2014",
-            "formatted_start_at": "1 April 2013",
-            "formatted_end_at": "31 March 2014"
+            "name": "total_cost",
+            "formatted_name": "Total cost"
           }
-        ],
-        "table": [
-          {
-            "x": "2013-07-01T00:00:00+00:00",
-            "y": 5000268
-          },
-          {
-            "x": "2013-04-01T00:00:00+00:00",
-            "y": 5016459.8
-          }
-        ],
-        "axes": {
-          "x": {
-            "label": "Quarter",
-            "key": [
-              "_quarter_start_at",
-              "end_at"
-            ],
-            "format": "date"
-          },
-          "y": [
-            {
-              "label": "Total cost",
-              "key": "total_cost",
-              "format": {
-                "sigfigs": 3,
-                "magnitude": true,
-                "type": "currency"
-              }
-            }
-          ]
-        },
-        "tabularData": [
-          [
-            "Quarter",
-            "1 July 2013 to 30 June 2014",
-            "1 April 2013 to 31 March 2014"
+        }
+      ]
+    },
+    {
+      "info": [
+        "Cost-per-transaction data is based on estimates of the cost of back office support for prison visit booking and the cost of time spent by staff on prison wings supporting applications by prisoners to book visits.",
+        "<br />",
+        "Data source: Ministry of Justice",
+        "<a href=\"https://www.gov.uk/service-manual/measurement/cost-per-transaction.html\">Cost per transaction</a> is the average cost of providing each successfully completed transaction, across all channels. Staff, IT and accommodation costs should be included."
+      ],
+      "value-attribute": "cost_per_transaction",
+      "description": "",
+      "module-type": "kpi",
+      "title": "Cost per transaction",
+      "format": {
+        "pence": true,
+        "type": "currency"
+      },
+      "classes": "cols3",
+      "slug": "cost-per-transaction",
+      "data-source": {
+        "data-group": "transactional-services",
+        "data-type": "summaries",
+        "query-params": {
+          "sort_by": "_timestamp:descending",
+          "filter_by": [
+            "service_id:moj-prison-visit-booking",
+            "type:seasonally-adjusted"
           ],
-          [
-            "Total cost",
-            "£5m",
-            "£5.02m"
-          ]
+          "flatten": true,
+          "limit": 2
+        }
+      },
+      "data": [
+        {
+          "formatted_change_from_previous": {
+            "change": "0%",
+            "trend": "no-change"
+          },
+          "formatted_value": "£3.80",
+          "formatted_date_range": "1 July 2013 to 30 June 2014",
+          "formatted_start_at": "1 July 2013",
+          "formatted_end_at": "30 June 2014",
+          "_quarter_start_at": "2013-07-01T00:00:00+00:00",
+          "end_at": "2014-07-01T00:00:00+00:00",
+          "cost_per_transaction": 3.8
+        },
+        {
+          "formatted_value": "£3.80",
+          "formatted_date_range": "1 April 2013 to 31 March 2014",
+          "formatted_start_at": "1 April 2013",
+          "formatted_end_at": "31 March 2014",
+          "_quarter_start_at": "2013-04-01T00:00:00+00:00",
+          "end_at": "2014-04-01T00:00:00+00:00",
+          "cost_per_transaction": 3.8
+        }
+      ],
+      "axes": {
+        "x": {
+          "label": "Quarter",
+          "key": [
+            "_quarter_start_at",
+            "end_at"
+          ],
+          "format": "date"
+        },
+        "y": [
+          {
+            "label": "Cost per transaction",
+            "key": "cost_per_transaction",
+            "format": {
+              "pence": true,
+              "type": "currency"
+            }
+          }
         ]
       },
-      {
-        "info": [
-          "Cost-per-transaction data is based on estimates of the cost of back office support for prison visit booking and the cost of time spent by staff on prison wings supporting applications by prisoners to book visits.",
-          "<br />",
-          "Data source: Ministry of Justice",
-          "<a href=\"https://www.gov.uk/service-manual/measurement/cost-per-transaction.html\">Cost per transaction</a> is the average cost of providing each successfully completed transaction, across all channels. Staff, IT and accommodation costs should be included."
+      "tabularData": [
+        [
+          "Quarter",
+          "1 July 2013 to 30 June 2014",
+          "1 April 2013 to 31 March 2014"
         ],
-        "value-attribute": "cost_per_transaction",
-        "description": "",
-        "module-type": "kpi",
-        "title": "Cost per transaction",
-        "format": {
-          "pence": true,
-          "type": "currency"
-        },
-        "classes": "cols3",
-        "slug": "cost-per-transaction",
-        "data-source": {
-          "data-group": "transactional-services",
-          "data-type": "summaries",
-          "query-params": {
-            "sort_by": "_timestamp:descending",
-            "filter_by": [
-              "service_id:moj-prison-visit-booking",
-              "type:seasonally-adjusted"
-            ],
-            "flatten": true,
-            "limit": 2
-          }
-        },
-        "data": [
-          {
-            "_quarter_start_at": "2013-07-01T00:00:00+00:00",
-            "cost_per_transaction": 3.8,
-            "end_at": "2014-07-01T00:00:00+00:00",
-            "formatted_change_from_previous": {
-              "change": "0%",
-              "trend": "no-change"
-            },
-            "formatted_value": "£3.80",
-            "formatted_date_range": "1 July 2013 to 30 June 2014",
-            "formatted_start_at": "1 July 2013",
-            "formatted_end_at": "30 June 2014"
-          },
-          {
-            "_quarter_start_at": "2013-04-01T00:00:00+00:00",
-            "cost_per_transaction": 3.8,
-            "end_at": "2014-04-01T00:00:00+00:00",
-            "formatted_value": "£3.80",
-            "formatted_date_range": "1 April 2013 to 31 March 2014",
-            "formatted_start_at": "1 April 2013",
-            "formatted_end_at": "31 March 2014"
-          }
-        ],
-        "table": [
-          {
-            "x": "2013-07-01T00:00:00+00:00",
-            "y": 3.8
-          },
-          {
-            "x": "2013-04-01T00:00:00+00:00",
-            "y": 3.8
-          }
-        ],
-        "axes": {
+        [
+          "Cost per transaction",
+          "£3.80",
+          "£3.80"
+        ]
+      ],
+      "table": [
+        {
           "x": {
-            "label": "Quarter",
-            "key": [
-              "_quarter_start_at",
-              "end_at"
-            ],
-            "format": "date"
+            "value": "2013-07-01T00:00:00+00:00",
+            "formatted_value": "1 July 2013",
+            "name": "_quarter_start_at",
+            "formatted_name": "Quarter start at"
           },
-          "y": [
-            {
-              "label": "Cost per transaction",
-              "key": "cost_per_transaction",
-              "format": {
-                "pence": true,
-                "type": "currency"
-              }
-            }
-          ]
+          "y": {
+            "value": 3.8,
+            "formatted_value": "£3.80",
+            "name": "cost_per_transaction",
+            "formatted_name": "Cost per transaction"
+          }
         },
-        "tabularData": [
-          [
-            "Quarter",
-            "1 July 2013 to 30 June 2014",
-            "1 April 2013 to 31 March 2014"
-          ],
-          [
-            "Cost per transaction",
-            "£3.80",
-            "£3.80"
-          ]
+        {
+          "x": {
+            "value": "2013-04-01T00:00:00+00:00",
+            "formatted_value": "1 April 2013",
+            "name": "_quarter_start_at",
+            "formatted_name": "Quarter start at"
+          },
+          "y": {
+            "value": 3.8,
+            "formatted_value": "£3.80",
+            "name": "cost_per_transaction",
+            "formatted_name": "Cost per transaction"
+          }
+        }
+      ]
+    },
+    {
+      "info": [
+        "Data source: Google Analytics",
+        "Shows the estimated number of users currently accessing the service on GOV.UK."
+      ],
+      "data-source": {
+        "data-group": "prison-visits",
+        "data-type": "realtime",
+        "query-params": {
+          "limit": 2,
+          "sort_by": "_timestamp:descending",
+          "flatten": true
+        }
+      },
+      "module-type": "realtime",
+      "title": "Live service usage",
+      "slug": "live-service-usage",
+      "description": "Live number of users on any page within the service",
+      "data": [
+        {
+          "formatted_value": 29,
+          "formatted_start_at": "23 December 2014",
+          "_timestamp": "2014-12-23T14:45:10+00:00",
+          "unique_visitors": 29
+        },
+        {
+          "formatted_value": 34,
+          "formatted_start_at": "23 December 2014",
+          "_timestamp": "2014-12-23T14:43:09+00:00",
+          "unique_visitors": 34
+        }
+      ],
+      "axes": {
+        "x": {
+          "label": "Time",
+          "key": "_timestamp",
+          "format": "time"
+        },
+        "y": [
+          {
+            "label": "Number of unique visitors",
+            "key": "unique_visitors",
+            "format": "integer"
+          }
         ]
       },
-      {
-        "info": [
-          "Data source: Google Analytics",
-          "Shows the estimated number of users currently accessing the service on GOV.UK."
+      "tabularData": [
+        [
+          "Time",
+          "2:45pm",
+          "2:43pm"
         ],
-        "data-source": {
-          "data-group": "prison-visits",
-          "data-type": "realtime",
-          "query-params": {
-            "limit": 2,
-            "sort_by": "_timestamp:descending",
-            "flatten": true
-          }
-        },
-        "module-type": "realtime",
-        "title": "Live service usage",
-        "slug": "live-service-usage",
-        "description": "Live number of users on any page within the service",
-        "data": [
-          {
-            "_timestamp": "2014-12-23T14:45:10+00:00",
-            "unique_visitors": 29,
+        [
+          "Number of unique visitors",
+          29,
+          34
+        ]
+      ],
+      "table": [
+        {
+          "x": {
+            "value": "2014-12-23T14:45:10+00:00",
+            "formatted_value": "23 December 2014",
+            "name": "_timestamp",
+            "formatted_name": "Timestamp"
+          },
+          "y": {
+            "value": 29,
             "formatted_value": 29,
-            "formatted_start_at": "23 December 2014"
+            "name": "unique_visitors",
+            "formatted_name": "Unique visitors"
+          }
+        },
+        {
+          "x": {
+            "value": "2014-12-23T14:43:09+00:00",
+            "formatted_value": "23 December 2014",
+            "name": "_timestamp",
+            "formatted_name": "Timestamp"
           },
-          {
-            "_timestamp": "2014-12-23T14:43:09+00:00",
-            "unique_visitors": 34,
+          "y": {
+            "value": 34,
             "formatted_value": 34,
-            "formatted_start_at": "23 December 2014"
+            "name": "unique_visitors",
+            "formatted_name": "Unique visitors"
+          }
+        }
+      ]
+    },
+    {
+      "info": [
+        "Data source: Department for Work and Pensions",
+        "<a href='/service-manual/measurement/digital-takeup' rel='external'>Digital take-up</a> measures the percentage of completed applications that are made through a digital channel versus non-digital channels."
+      ],
+      "value-attribute": "rate",
+      "description": "Proportion of bookings made using the digital service",
+      "module-type": "single_timeseries",
+      "title": "Digital take-up",
+      "axes": {
+        "y": [
+          {
+            "label": "Completion percentage",
+            "format": {
+              "type": "percent"
+            },
+            "key": "rate"
           }
         ],
-        "table": [
-          {
-            "x": "2014-12-23T14:45:10+00:00",
-            "y": 29
-          },
-          {
-            "x": "2014-12-23T14:43:09+00:00",
-            "y": 34
-          }
-        ],
-        "axes": {
-          "x": {
-            "label": "Time",
-            "key": "_timestamp",
-            "format": "time"
-          },
-          "y": [
-            {
-              "label": "Number of unique visitors",
-              "key": "unique_visitors",
-              "format": "integer"
-            }
-          ]
-        },
-        "tabularData": [
-          [
-            "Time",
-            "2:45pm",
-            "2:43pm"
+        "x": {
+          "format": "date",
+          "key": [
+            "_start_at",
+            "_end_at"
           ],
-          [
-            "Number of unique visitors",
-            29,
-            34
-          ]
-        ]
+          "label": "Date"
+        }
       },
-      {
-        "info": [
-          "Data source: Department for Work and Pensions",
-          "<a href='/service-manual/measurement/digital-takeup' rel='external'>Digital take-up</a> measures the percentage of completed applications that are made through a digital channel versus non-digital channels."
-        ],
-        "value-attribute": "rate",
-        "description": "Proportion of bookings made using the digital service",
-        "module-type": "single_timeseries",
-        "title": "Digital take-up",
-        "axes": {
-          "y": [
-            {
-              "label": "Completion percentage",
-              "format": {
-                "type": "percent"
-              },
-              "key": "rate"
-            }
-          ],
-          "x": {
-            "format": "date",
-            "key": [
-              "_start_at",
-              "_end_at"
-            ],
-            "label": "Date"
-          }
-        },
-        "format-options": {
-          "type": "percent"
-        },
-        "slug": "digital-takeup",
-        "data-source": {
-          "data-group": "prison-visits",
-          "data-type": "digital-takeup",
-          "query-params": {
-            "sort_by": "_timestamp:descending",
-            "flatten": true,
-            "limit": 2
-          }
-        },
-        "data": [
-          {
-            "_end_at": "2014-12-22T00:00:00+00:00",
-            "_start_at": "2014-12-15T00:00:00+00:00",
-            "rate": null,
-            "formatted_value": "no data",
-            "formatted_date_range": "15 to 21 December 2014",
-            "formatted_start_at": "15 December 2014",
-            "formatted_end_at": "21 December 2014"
-          },
-          {
-            "_end_at": "2014-12-15T00:00:00+00:00",
-            "_start_at": "2014-12-08T00:00:00+00:00",
-            "rate": null,
-            "formatted_value": "no data",
-            "formatted_date_range": "8 to 14 December 2014",
-            "formatted_start_at": "8 December 2014",
-            "formatted_end_at": "14 December 2014"
-          }
-        ],
-        "table": [
-          {
-            "x": "2014-12-15T00:00:00+00:00",
-            "y": null
-          },
-          {
-            "x": "2014-12-08T00:00:00+00:00",
-            "y": null
-          }
-        ],
-        "tabularData": [
-          [
-            "Date",
-            "15 to 21 December 2014",
-            "8 to 14 December 2014"
-          ],
-          [
-            "Completion percentage",
-            null,
-            null
-          ]
-        ]
+      "format-options": {
+        "type": "percent"
       },
-      {
-        "trim": false,
-        "migrated": true,
-        "value-attribute": "score",
-        "axis-period": "month",
-        "description": "Overall satisfaction score includes all ratings weighted from 100% for 'very satisfied' to 0% for 'very dissatisfied'",
-        "module-type": "user_satisfaction_graph",
-        "title": "User satisfaction",
-        "axes": {
-          "y": [
-            {
-              "format": "percent",
-              "key": "score",
-              "label": "User satisfaction"
-            },
-            {
-              "format": "integer",
-              "key": "rating_1",
-              "label": "Very dissatisfied"
-            },
-            {
-              "format": "integer",
-              "key": "rating_2",
-              "label": "Dissatisfied"
-            },
-            {
-              "format": "integer",
-              "key": "rating_3",
-              "label": "Neither satisfied or dissatisfied"
-            },
-            {
-              "format": "integer",
-              "key": "rating_4",
-              "label": "Satisfied"
-            },
-            {
-              "format": "integer",
-              "key": "rating_5",
-              "label": "Very satisfied"
-            }
-          ],
-          "x": {
-            "format": "date",
-            "key": "_start_at",
-            "label": "Date"
-          }
+      "slug": "digital-takeup",
+      "data-source": {
+        "data-group": "prison-visits",
+        "data-type": "digital-takeup",
+        "query-params": {
+          "sort_by": "_timestamp:descending",
+          "flatten": true,
+          "limit": 2
+        }
+      },
+      "data": [
+        {
+          "formatted_value": "no data",
+          "formatted_date_range": "15 to 21 December 2014",
+          "formatted_start_at": "15 December 2014",
+          "formatted_end_at": "21 December 2014",
+          "rate": null,
+          "_start_at": "2014-12-15T00:00:00+00:00",
+          "_end_at": "2014-12-22T00:00:00+00:00"
         },
-        "info": [
-          "Data source: GOV.UK user feedback database",
-          "<a href='/service-manual/measurement/user-satisfaction' rel='external'>User satisfaction</a> is measured by surveying users at the point of transaction completion. It is measured on a five-point scale, from most satisfied to least satisfied. The mean of these responses is converted to a percentage for display purposes."
+        {
+          "formatted_value": "no data",
+          "formatted_date_range": "8 to 14 December 2014",
+          "formatted_start_at": "8 December 2014",
+          "formatted_end_at": "14 December 2014",
+          "rate": null,
+          "_start_at": "2014-12-08T00:00:00+00:00",
+          "_end_at": "2014-12-15T00:00:00+00:00"
+        }
+      ],
+      "tabularData": [
+        [
+          "Date",
+          "15 to 21 December 2014",
+          "8 to 14 December 2014"
         ],
-        "total-attribute": "num_responses",
-        "slug": "user-satisfaction",
-        "data-source": {
-          "data-group": "prison-visits",
-          "data-type": "user-satisfaction-score",
-          "query-params": {
-            "sort_by": "_timestamp:descending",
-            "flatten": true,
-            "limit": 2
+        [
+          "Completion percentage",
+          null,
+          null
+        ]
+      ],
+      "table": [
+        {
+          "x": {
+            "value": "2014-12-15T00:00:00+00:00",
+            "formatted_value": "15 December 2014",
+            "name": "_start_at",
+            "formatted_name": "Start at"
+          },
+          "y": {
+            "value": null,
+            "formatted_value": "no data",
+            "name": "rate",
+            "formatted_name": "Rate"
           }
         },
-        "data": [
+        {
+          "x": {
+            "value": "2014-12-08T00:00:00+00:00",
+            "formatted_value": "8 December 2014",
+            "name": "_start_at",
+            "formatted_name": "Start at"
+          },
+          "y": {
+            "value": null,
+            "formatted_value": "no data",
+            "name": "rate",
+            "formatted_name": "Rate"
+          }
+        }
+      ]
+    },
+    {
+      "trim": false,
+      "migrated": true,
+      "value-attribute": "score",
+      "axis-period": "month",
+      "description": "Overall satisfaction score includes all ratings weighted from 100% for 'very satisfied' to 0% for 'very dissatisfied'",
+      "module-type": "user_satisfaction_graph",
+      "title": "User satisfaction",
+      "axes": {
+        "y": [
           {
-            "_start_at": "2014-12-22T00:00:00+00:00",
-            "rating_1": 0,
-            "rating_2": 1,
-            "rating_3": 2,
-            "rating_4": 3,
-            "rating_5": 6,
-            "score": 0.7916666666666667,
-            "formatted_change_from_previous": {
-              "change": "−8.48%",
-              "trend": "decrease"
-            },
+            "format": "percent",
+            "key": "score",
+            "label": "User satisfaction"
+          },
+          {
+            "format": "integer",
+            "key": "rating_1",
+            "label": "Very dissatisfied"
+          },
+          {
+            "format": "integer",
+            "key": "rating_2",
+            "label": "Dissatisfied"
+          },
+          {
+            "format": "integer",
+            "key": "rating_3",
+            "label": "Neither satisfied or dissatisfied"
+          },
+          {
+            "format": "integer",
+            "key": "rating_4",
+            "label": "Satisfied"
+          },
+          {
+            "format": "integer",
+            "key": "rating_5",
+            "label": "Very satisfied"
+          }
+        ],
+        "x": {
+          "format": "date",
+          "key": "_start_at",
+          "label": "Date"
+        }
+      },
+      "info": [
+        "Data source: GOV.UK user feedback database",
+        "<a href='/service-manual/measurement/user-satisfaction' rel='external'>User satisfaction</a> is measured by surveying users at the point of transaction completion. It is measured on a five-point scale, from most satisfied to least satisfied. The mean of these responses is converted to a percentage for display purposes."
+      ],
+      "total-attribute": "num_responses",
+      "slug": "user-satisfaction",
+      "data-source": {
+        "data-group": "prison-visits",
+        "data-type": "user-satisfaction-score",
+        "query-params": {
+          "sort_by": "_timestamp:descending",
+          "flatten": true,
+          "limit": 2
+        }
+      },
+      "data": [
+        {
+          "formatted_change_from_previous": {
+            "change": "−8.48%",
+            "trend": "decrease"
+          },
+          "formatted_value": "79.2%",
+          "formatted_start_at": "22 December 2014",
+          "formatted_end_at": "28 December 2014",
+          "score": 0.7916666666666667,
+          "rating_1": 0,
+          "rating_2": 1,
+          "rating_3": 2,
+          "rating_4": 3,
+          "rating_5": 6,
+          "_start_at": "2014-12-22T00:00:00+00:00"
+        },
+        {
+          "formatted_value": "86.5%",
+          "formatted_start_at": "15 December 2014",
+          "formatted_end_at": "21 December 2014",
+          "score": 0.865,
+          "rating_1": 3,
+          "rating_2": 2,
+          "rating_3": 0,
+          "rating_4": 9,
+          "rating_5": 36,
+          "_start_at": "2014-12-15T00:00:00+00:00"
+        }
+      ],
+      "tabularData": [
+        [
+          "Date",
+          "22 December 2014",
+          "15 December 2014"
+        ],
+        [
+          "User satisfaction",
+          0.7916666666666667,
+          0.865
+        ],
+        [
+          "Very dissatisfied",
+          0,
+          3
+        ],
+        [
+          "Dissatisfied",
+          1,
+          2
+        ],
+        [
+          "Neither satisfied or dissatisfied",
+          2,
+          0
+        ],
+        [
+          "Satisfied",
+          3,
+          9
+        ],
+        [
+          "Very satisfied",
+          6,
+          36
+        ]
+      ],
+      "table": [
+        {
+          "x": {
+            "value": "2014-12-22T00:00:00+00:00",
+            "formatted_value": "22 December 2014",
+            "name": "_start_at",
+            "formatted_name": "Start at"
+          },
+          "y": {
+            "value": 0.7916666666666667,
             "formatted_value": "79.2%",
-            "formatted_start_at": "22 December 2014",
-            "formatted_end_at": "28 December 2014"
-          },
-          {
-            "_start_at": "2014-12-15T00:00:00+00:00",
-            "rating_1": 3,
-            "rating_2": 2,
-            "rating_3": 0,
-            "rating_4": 9,
-            "rating_5": 36,
-            "score": 0.865,
-            "formatted_value": "86.5%",
-            "formatted_start_at": "15 December 2014",
-            "formatted_end_at": "21 December 2014"
+            "name": "score",
+            "formatted_name": "Score"
           }
-        ],
-        "table": [
-          {
-            "x": "2014-12-22T00:00:00+00:00",
-            "y": 0.7916666666666667
-          },
-          {
-            "x": "2014-12-15T00:00:00+00:00",
-            "y": 0.865
-          }
-        ],
-        "tabularData": [
-          [
-            "Date",
-            "22 December 2014",
-            "15 December 2014"
-          ],
-          [
-            "User satisfaction",
-            0.7916666666666667,
-            0.865
-          ],
-          [
-            "Very dissatisfied",
-            0,
-            3
-          ],
-          [
-            "Dissatisfied",
-            1,
-            2
-          ],
-          [
-            "Neither satisfied or dissatisfied",
-            2,
-            0
-          ],
-          [
-            "Satisfied",
-            3,
-            9
-          ],
-          [
-            "Very satisfied",
-            6,
-            36
-          ]
-        ]
-      },
-      {
-        "info": [
-          "Data source: Google Analytics",
-          "<a href='/service-manual/measurement/completion-rate' rel='external'>Completion rate</a> measures the proportion of people who started a claim and were able to complete it.",
-          "It is calculated as percentage of unique visitors who arrived at the final page of the service out of those who arrived at the start page."
-        ],
-        "value-attribute": "rate",
-        "description": "Proportion of users who start and complete their application using the digital service",
-        "module-type": "single_timeseries",
-        "title": "Completion rate",
-        "axes": {
-          "y": [
-            {
-              "label": "Completion percentage",
-              "format": {
-                "type": "percent"
-              },
-              "key": "rate"
-            }
-          ],
+        },
+        {
           "x": {
-            "format": "date",
-            "key": [
-              "_start_at",
-              "_end_at"
-            ],
-            "label": "Date"
-          }
-        },
-        "format-options": {
-          "type": "percent"
-        },
-        "slug": "completion-rate",
-        "data-source": {
-          "data-group": "prison-visits",
-          "data-type": "completion-rate",
-          "query-params": {
-            "sort_by": "_timestamp:descending",
-            "flatten": true,
-            "limit": 2
-          }
-        },
-        "data": [
-          {
-            "_end_at": "2014-12-22T00:00:00+00:00",
-            "_start_at": "2014-12-15T00:00:00+00:00",
-            "rate": 2,
-            "formatted_value": "200%",
-            "formatted_date_range": "15 to 21 December 2014",
-            "formatted_start_at": "15 December 2014",
-            "formatted_end_at": "21 December 2014"
+            "value": "2014-12-15T00:00:00+00:00",
+            "formatted_value": "15 December 2014",
+            "name": "_start_at",
+            "formatted_name": "Start at"
           },
+          "y": {
+            "value": 0.865,
+            "formatted_value": "86.5%",
+            "name": "score",
+            "formatted_name": "Score"
+          }
+        }
+      ]
+    },
+    {
+      "info": [
+        "Data source: Google Analytics",
+        "<a href='/service-manual/measurement/completion-rate' rel='external'>Completion rate</a> measures the proportion of people who started a claim and were able to complete it.",
+        "It is calculated as percentage of unique visitors who arrived at the final page of the service out of those who arrived at the start page."
+      ],
+      "value-attribute": "rate",
+      "description": "Proportion of users who start and complete their application using the digital service",
+      "module-type": "single_timeseries",
+      "title": "Completion rate",
+      "axes": {
+        "y": [
           {
-            "_end_at": "2014-12-15T00:00:00+00:00",
-            "_start_at": "2014-12-08T00:00:00+00:00",
-            "rate": null,
-            "formatted_value": "no data",
-            "formatted_date_range": "8 to 14 December 2014",
-            "formatted_start_at": "8 December 2014",
-            "formatted_end_at": "14 December 2014"
+            "label": "Completion percentage",
+            "format": {
+              "type": "percent"
+            },
+            "key": "rate"
           }
         ],
-        "table": [
-          {
-            "x": "2014-12-15T00:00:00+00:00",
-            "y": 2
-          },
-          {
-            "x": "2014-12-08T00:00:00+00:00",
-            "y": null
-          }
-        ],
-        "tabularData": [
-          [
-            "Date",
-            "15 to 21 December 2014",
-            "8 to 14 December 2014"
+        "x": {
+          "format": "date",
+          "key": [
+            "_start_at",
+            "_end_at"
           ],
-          [
-            "Completion percentage",
-            "200%",
-            null
-          ]
+          "label": "Date"
+        }
+      },
+      "format-options": {
+        "type": "percent"
+      },
+      "slug": "completion-rate",
+      "data-source": {
+        "data-group": "prison-visits",
+        "data-type": "completion-rate",
+        "query-params": {
+          "sort_by": "_timestamp:descending",
+          "flatten": true,
+          "limit": 2
+        }
+      },
+      "data": [
+        {
+          "formatted_value": "200%",
+          "formatted_date_range": "15 to 21 December 2014",
+          "formatted_start_at": "15 December 2014",
+          "formatted_end_at": "21 December 2014",
+          "rate": 2,
+          "_start_at": "2014-12-15T00:00:00+00:00",
+          "_end_at": "2014-12-22T00:00:00+00:00"
+        },
+        {
+          "formatted_value": "no data",
+          "formatted_date_range": "8 to 14 December 2014",
+          "formatted_start_at": "8 December 2014",
+          "formatted_end_at": "14 December 2014",
+          "rate": null,
+          "_start_at": "2014-12-08T00:00:00+00:00",
+          "_end_at": "2014-12-15T00:00:00+00:00"
+        }
+      ],
+      "tabularData": [
+        [
+          "Date",
+          "15 to 21 December 2014",
+          "8 to 14 December 2014"
+        ],
+        [
+          "Completion percentage",
+          "200%",
+          null
         ]
-      }
-    ],
+      ],
+      "table": [
+        {
+          "x": {
+            "value": "2014-12-15T00:00:00+00:00",
+            "formatted_value": "15 December 2014",
+            "name": "_start_at",
+            "formatted_name": "Start at"
+          },
+          "y": {
+            "value": 2,
+            "formatted_value": "200%",
+            "name": "rate",
+            "formatted_name": "Rate"
+          }
+        },
+        {
+          "x": {
+            "value": "2014-12-08T00:00:00+00:00",
+            "formatted_value": "8 December 2014",
+            "name": "_start_at",
+            "formatted_name": "Start at"
+          },
+          "y": {
+            "value": null,
+            "formatted_value": "no data",
+            "name": "rate",
+            "formatted_name": "Rate"
+          }
+        }
+      ]
+    }
+  ],
   "slug": "prison-visits",
   "description-extra": "The service must match the visitor and prisoner to the available capacity for visits, balancing convenience for the visitor with the need for efficiency and security.",
   "costs": "Cost-per-transaction data is based on estimates of the cost of back office support for prison visit booking and the cost of time spent by staff on prison wings supporting applications by prisoners to book visits.",
