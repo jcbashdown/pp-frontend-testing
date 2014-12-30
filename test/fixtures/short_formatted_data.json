@@ -72,7 +72,7 @@
             "y": {
               "value": 1315860,
               "formatted_value": "1.32m",
-              "name": "_number_of_transactions",
+              "name": "number_of_transactions",
               "formatted_name": "Number of transactions"
             }
           },
@@ -86,7 +86,7 @@
             "y": {
               "value": 1320121,
               "formatted_value": "1.32m",
-              "name": "_number_of_transactions",
+              "name": "number_of_transactions",
               "formatted_name": "Number of transactions"
             }
           }
