@@ -7,7 +7,7 @@ var dashboardSlug = window.location.pathname.split('/').pop();
 
 (function (format) {
 
-  var module_tables = document.querySelectorAll('section.module > table');
+  var module_tables = document.querySelectorAll('section.module');
 
   var table_data = [];
   [].forEach.call(module_tables, function (table) {
@@ -27,7 +27,8 @@ var dashboardSlug = window.location.pathname.split('/').pop();
         axes[i].data.push(cell.getAttribute('data-raw'));
       });
     });
-    table_data.push({'rows': rows, 'axes': axes, 'table_element': table});
+    var table_id = table.getAttribute('id');
+    table_data.push({'rows': rows, 'axes': axes, 'table_id': table_id});
   });
   /*console.log(JSON.stringify(table_data, null, 2));*/
   console.log(table_data);

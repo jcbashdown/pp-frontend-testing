@@ -4,7 +4,7 @@ block content
   h1= title
   p Welcome to #{title}
   each module in modules 
-    section(class='module')
+    section(class='module', id=module.slug)
       h2= module.title
       table
         tr
@@ -14,4 +14,7 @@ block content
           tr
             td(data-raw=datum.x.value)= datum.x.formatted_value
             td(data-raw=datum.y.value)= datum.y.formatted_value
+      div(class='c3')
+      div(class='nvd3')
+      div(class='epoch')
         

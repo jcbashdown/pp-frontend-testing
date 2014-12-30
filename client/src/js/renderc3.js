@@ -2,7 +2,8 @@ var c3 = require('c3');
 
 module.exports = function (table_data, format) {
   table_data.forEach(function (module) {
-    var table = module.table_element;
+    var table_id = module.table_id;
+    var table = document.querySelectorAll('section#'+table_id+' > .c3')[0];
     var axes = module.axes;
     var chart = c3.generate({
       data: {
@@ -22,8 +23,7 @@ module.exports = function (table_data, format) {
         }
       }
     });
-
-    table.parentNode.appendChild(chart.element);
+    table.appendChild(chart.element);
 
   });
 };
