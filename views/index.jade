@@ -11,10 +11,10 @@ block content
           th(data-raw=module.table[0].x.name)= module.table[0].x.formatted_name 
           th(data-raw=module.table[0].y.name)= module.table[0].y.formatted_name 
         each datum in module.table
-          tr
-            td(data-raw=datum.x.value)= datum.x.formatted_value
-            td(data-raw=datum.y.value)= datum.y.formatted_value
+          tr(class='data')
+            td(class='x', data-raw=datum.x.value)= datum.x.formatted_value
+            td(class='y', data-raw=datum.y.value)= datum.y.formatted_value
       div(class='c3')
-      div(class='nvd3 epoch category10', id='area' style='height:200px;')
-      div(class='epoch')
+      div(class='epoch category10', id='area', style='height:200px;')
+      div(class='nvd3')
         
