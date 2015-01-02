@@ -3,8 +3,10 @@ var moment = require('moment');
 var format = require('./formatter')(moment, _);
 var c3Adapter = require('./c3_adapter');
 var epochAdapter = require('./epoch_adapter');
+var highchartsAdapter = require('./highcharts_adapter');
 var renderC3 = require('./renderc3');
 var renderEpoch = require('./renderepoch');
+var renderHighCharts = require('./renderhighcharts');
 var renderNvD3 = require('./rendernvd3');
 
 var dashboardSlug = window.location.pathname.split('/').pop();
@@ -22,5 +24,8 @@ var dashboardSlug = window.location.pathname.split('/').pop();
 
   renderEpoch(table_data, format);
 
+  var table_data = highchartsAdapter(module_tables);
+
+  renderHighCharts(table_data, format);
 
 })(format);
