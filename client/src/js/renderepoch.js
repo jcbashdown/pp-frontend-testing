@@ -11,7 +11,5 @@ module.exports = function (table_data, format) {
       data: data,
       axes: ['left', 'right', 'bottom']
     });
-    /*console.log(JSON.stringify(axes, null, 2));*/
-    /*table.appendChild(chart.element);*/
   });
 };

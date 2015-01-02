@@ -19,9 +19,6 @@ module.exports = function (module_tables) {
       });
     });
     var table_id = table.getAttribute('id');
-    console.log('flibble');
-    console.log(JSON.stringify(axes, null, 2));
-    console.log('^flibble');
     table_data.push({'rows': rows, 'axes': axes, 'table_id': table_id});
   });
   return table_data;

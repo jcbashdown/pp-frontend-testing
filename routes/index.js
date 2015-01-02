@@ -10,7 +10,6 @@ router.get('/:slug', function(req, res) {
   dashboard.getDashboardMetrics().
     then(function(config){
       config = data_format_functions.format_data(config);
-      console.log(JSON.stringify(config, null, 2));
       res.render('index', { title: config['title'], modules: config['modules']});
     }); 
 });

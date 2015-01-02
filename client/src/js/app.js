@@ -14,13 +14,12 @@ var dashboardSlug = window.location.pathname.split('/').pop();
   var module_tables = document.querySelectorAll('section.module');
 
   var table_data = c3Adapter(module_tables);
-  console.log(table_data);
   renderC3(table_data, format);
 
   var table_data = epochAdapter(module_tables);
-  console.log('YAR');
+
   renderNvD3(table_data, format);
-  console.log(table_data);
+
   renderEpoch(table_data, format);
 
 

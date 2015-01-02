@@ -21,9 +21,7 @@ module.exports = function (table_data, format) {
       chart.yAxis
           .axisLabel('Voltage (v)')
           .tickFormat(d3.format(',.2f'));
-      console.log('floooo');
-      console.log(data);
-      console.log('^floooo');
+
       d3.select('section#'+table_id+' > .nvd3').append('svg')
           .datum(data)
           .call(chart);

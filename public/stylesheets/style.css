@@ -6,3 +6,18 @@ body {
 a {
   color: #00B7FF;
 }
+
+svg {
+    display: block;
+}
+
+.nvd3, svg {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+}
+
+.nvd3 {
+    height: 500px;
+}
