@@ -7,8 +7,9 @@ module.exports = function (module_tables) {
     [].forEach.call(rows, function (row) {
       var x_value = row.querySelectorAll('td.x')[0].getAttribute('data-raw');
       var y_value = row.querySelectorAll('td.y')[0].getAttribute('data-raw');
+      x_value = new Date(x_value).getTime()/1000
       axes.push({
-        'x': new Date(x_value),
+        'x': x_value,
         'y': y_value
       })
     });

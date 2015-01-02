@@ -1,7 +1,3 @@
-/*var d3 = require('d3');*/
-/*var $ = require('jquery');*/
-/*var epoch = require('../../lib/js/epoch.min.js');*/
-
 module.exports = function (table_data, format) {
   table_data.forEach(function (module) {
     var table_id = module.table_id;
