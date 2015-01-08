@@ -8,7 +8,7 @@ module.exports = function (table_data, format) {
     var chart = c3.generate({
       data: {
         x: axes[0].data[0],
-        xFormat: '%Y-%m-%dT%H:%M:%S+00:00',
+        xFormat: '%Y-%m-%d',
         columns: axes.map(function (axis) {
           return axis.data;
         })
@@ -16,7 +16,7 @@ module.exports = function (table_data, format) {
       axis: {
         x: {
           type: 'timeseries',
-          tick: { format: format.bind(null, axes[0].format_options) }
+          tick: { format: '%Y-%m-%d'}
         },
         y: {
           tick: { format: format.bind(null, axes[1].format_options) }

@@ -1,5 +1,6 @@
 module.exports = function (module_tables) {
 
+  var d3TimeFormatter = d3.time.format('%Y-%m-%d');
   var table_data = [];
   [].forEach.call(module_tables, function (table) {
     var header_cells = table.querySelectorAll('th'),
@@ -15,7 +16,12 @@ module.exports = function (module_tables) {
 
     [].forEach.call(rows, function (row) {
       [].forEach.call(row.querySelectorAll('td'), function (cell, i) {
-        axes[i].data.push(cell.getAttribute('data-raw'));
+        console.log(i);
+        if (i == 0) {
+          axes[i].data.push(d3TimeFormatter(new Date(cell.getAttribute('data-raw'))));
+        } else {
+          axes[i].data.push(cell.getAttribute('data-raw'));
+        }
       });
     });
     var table_id = table.getAttribute('id');
