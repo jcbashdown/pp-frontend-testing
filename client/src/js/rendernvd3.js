@@ -16,10 +16,11 @@ module.exports = function (table_data, format) {
           })
       ;
       chart.xAxis
-          .axisLabel('Time (s)')
+          .axisLabel('Time')
           .tickFormat(d3.format(',.1f'));
+    /*.tickFormat(d3.time.format('%B'));*/
       chart.yAxis
-          .axisLabel('Voltage (v)')
+          .axisLabel('Value')
           .tickFormat(d3.format(',.2f'));
 
       d3.select('section#'+table_id+' > .nvd3').append('svg')
